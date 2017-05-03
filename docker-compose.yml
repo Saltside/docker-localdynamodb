@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  dynamodb:
+    build: .
+    image: ${DOCKER_IMAGE}
+  test:
+    image: saltside/await:0.1
+    command: "await dynamodb://dynamodb:8000"
